@@ -1,0 +1,337 @@
+/* 
+Theme color: #FF9000 rgb(255, 144, 0);
+
+CSS Styling most mostly tested in Google Chrome Version 75.0.3770.100
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+:root {
+    --theme-color: #FF9000;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    color: var(--theme-color);
+    margin: 0;
+}
+
+p, a {
+    color: #fff
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    color: #fff;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:focus, button:active {
+    outline: none;
+}
+
+/* REUSUABLE CLASSES */
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.content--container {
+    padding: 5% 0 5% 0;
+    width: 55%;
+    text-align: center;
+}
+
+.mobile-stack {
+    display: flex;
+    justify-content: space-between;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* HERO SECTION */
+
+#hero {
+    height: 100vh;
+    background-image: url('../assets/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* HERO NAVIGATION */
+
+#hero .nav {
+    position: absolute;
+    top: 8%;
+    right: 8%;
+    display: flex;
+    width: 15%;
+    justify-content: space-between;
+}
+
+#hero .active {
+    color: var(--theme-color);
+}
+
+.nav--separator {
+    height: 1em;
+    width: 1px;
+    background-color: #fff;
+}
+
+#hero .cta--container {
+    position: absolute;
+    right: 8%;
+    bottom: 5%;
+    width: 25%;
+    text-align: right;
+}
+
+#hero .cta--content {
+    margin: 20px 0 40px 0
+}
+
+#hero .cta--button {
+    background-image: linear-gradient(45deg, #FF6E01, #FFA300);
+    color: #fff;
+    width: 80%;
+    font-size: 1.4em;
+    height: 2.5em;
+}
+
+/* THINK CLEARLY */
+
+#think-clearly {
+    margin: 2.5% 0;
+}
+
+/* CARDS */
+
+#cards {
+    width: 70%;
+    /* To center the row */
+    margin: 0 15%;
+}
+
+.plus-container {
+    background-color: var(--theme-color);
+    flex-grow: 1;
+}
+
+.card {
+    display: flex;
+    border: 1px solid var(--theme-color);
+    border-radius: 40px;
+    padding: 50px 20px;
+    margin: 30px 30px;
+    align-items: center;
+}
+
+#cards .card--content {
+    text-align: center;
+}
+
+.flex--grow-1 {
+    flex-grow: 1;
+}
+
+.flex--grow-3 {
+    flex-grow: 3;
+}
+
+.plus-container {
+    /* font-size: 5rem; */
+    border-radius: 50%;
+    padding: 1rem;
+    color: #fff;
+    font-weight: 900
+}
+
+/* CHOOSE WISELY */
+
+#choose-wisely {
+    margin: 3% 0 5% 0;
+}
+
+/* CHOICES */
+
+#choices {
+    width: 75%;
+    margin: 0 12.5%;
+}
+
+#choices button {
+    font-size: 1.8em;
+    padding: 1em 0;
+    width: 97.5%;
+    margin: 0 2.5%;
+    color: var(--theme-color);
+    background-color: #000;
+    border: 1px solid var(--theme-color);
+    transition: 400ms ease-in-out background-color, 400ms ease-in-out color;
+}
+
+#choices button:hover {
+    background-color: rgba(255, 144, 0, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#choices button.active {
+    background-color: var(--theme-color);
+    color: #fff;
+}
+
+/* CONFUSED */
+
+#confused {
+    margin: 7.5% 0 2.5% 0;
+    display: flex;
+    justify-content: center;
+}
+
+#confused p {
+    margin: 0;
+}
+
+#confused a {
+    color: var(--theme-color);
+    transition: 400ms ease-in-out color;
+}
+
+#confused a:hover {
+    color: blue;
+}
+
+/* ANIMATIONS */
+
+.scale-in-center {
+    -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes scale-in-center {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scale-in-center {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* SMALLER LAPTOP SCREEN SIZE RESPONSIVE*/
+
+@media only screen and (max-width: 1160px) {
+    #hero .nav {
+        width: 25%;
+    }
+    #hero .cta--container {
+        width: 35%;
+    }
+    .mobile-stack {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .flex--grow-1 {
+        flex-grow: 1;
+        width: 100%;
+    }
+    .flex--grow-3 {
+        flex-grow: 1;
+        width: 100%;
+    }
+}
+
+/* MOBILE RESPONSIVE*/
+
+@media only screen and (max-width: 767px) {
+    html {
+        font-size: 0.85em;
+    }
+    /* MOBILE HERO */
+    #hero .nav {
+        right: 0%;
+        left: 50%;
+        width: 50%;
+        transform: translatex(-50%);
+    }
+    #hero .cta--container {
+        right: 0%;
+        bottom: 0%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        text-align: center;
+    }
+    .content--container {
+        padding: 5% 0 5% 0;
+        width: 75%;
+        text-align: center;
+    }
+    @-webkit-keyframes scale-in-center {
+        0% {
+            -webkit-transform: scale(0) translate(-50%, -50%);
+            transform: scale(0) translate(-50%, -50%);
+            opacity: 1;
+        }
+        100% {
+            -webkit-transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+            opacity: 1;
+        }
+    }
+    @keyframes scale-in-center {
+        0% {
+            -webkit-transform: scale(0) translate(-50%, -50%);
+            transform: scale(0) translate(-50%, -50%);
+            opacity: 1;
+        }
+        100% {
+            -webkit-transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+            opacity: 1;
+        }
+    }
+    /* MOBILE CARDS */
+    #cards .card--icon {
+        order: -1;
+    }
+}
